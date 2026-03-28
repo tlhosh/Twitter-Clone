@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X / Home</title>
+    <link rel="stylesheet" href="stylemain.css">
+</head>
+<body>
+    <!-- Dark Mode Toggle - Fixed Position -->
+    <input type="checkbox" id="dm" style="display:none;">
+    <label for="dm" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+      <div class="toggle-slider">
+        <span class="sun-icon">&#9728;</span>
+        <span class="moon-icon">&#9790;</span>
+      </div>
+    </label>
+
+    <!-- ── LEFT SIDEBAR ── -->
+<aside class="sidebar">
+  <!-- twitter Logo -->
+  <div class="sidebar-logo">
+  <img src="icons/logot.svg">
+  </div>
+ 
+  <nav>
+    <div class="nav-item active">
+<img src="icons/home.svg" alt="home" class="icon">
+      <span class="nav-label">Home</span>
+    </div>
+
+    <div class="nav-item">
+    <img src="icons/search.svg"alt="explore" class="icon">
+      <span class="nav-label">Explore</span>
+    </div>
+
+    <div class="nav-item">
+     <img src="icons/notifications.svg" alt="notifications" class="icon">
+      <span class="nav-label">Notifications <span class="nav-badge">20+</span></span>
+    </div>
+
+    <div class="nav-item">
+      <img src="icons/follow.svg" alt="follow" class="icon">
+      <span class="nav-label">Follow</span>
+    </div>
+
+    <div class="nav-item">
+<img src="icons/chat.svg" alt="chat" class="icon">
+      <span class="nav-label">Chat</span>
+    </div>
+
+    <div class="nav-item">
+<img src="icons/grok.svg" alt="grok" class="icon">
+      <span class="nav-label">Grok</span>
+    </div>
+
+    <div class="nav-item">
+   <img src="icons/bookmark.svg" alt="bookmark" class="icon">
+      <span class="nav-label">Bookmarks</span>
+    </div>
+
+    <div class="nav-item">
+     <img src="icons/logot.svg" alt="premium" class="icon">
+      <span class="nav-label">Premium <span class="nav-badge sale">50% off</span></span>
+    </div>
+
+    <div class="nav-item">
+      <img src="icons/profile.svg" alt="profile" class="icon">
+      <span class="nav-label">Profile</span>
+    </div>
+    <div class="nav-item">
+<img src="icons/more.svg" alt="more" class="icon">
+      <span class="nav-label">More</span>
+    </div>
+  </nav>
+ 
+  <button class="post-btn" id="mainPostBtn">Post</button>
+ 
+  <!-- User card -->
+  <div class="user-card">
+    <div class="avatar moila">M</div>
+    <div class="user-info">
+      <div class="user-name">Moila Matlhodi</div>
+      <div class="user-handle">@matlhodi_moila</div>
+    </div>
+    <span class="more">···</span>
+  </div>
+</aside>
+
+<!-- ── MAIN FEED ── -->
+<main class="feed">
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab(event,'foryou')">For you</div>
+<div class="tab" onclick="switchTab(event,'following')">Following</div>
+  </div>
+<div id="tab-foryou" class="tab-content active">
+    <!-- Compose -->
+    <div class="compose">
+      <div class="avatar moila">M</div>
+      <div class="compose-input">
+        <input type="text" id="composeInput" placeholder="What's happening?"/>
+        <div class="compose-actions">
+          <div class="compose-icons">
+            <!-- image -->
+            <button class="icon-btn" title="Media">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#1d9bf0"><path d="M3 5.5C3 4.119 4.119 3 5.5 3h13C19.881 3 21 4.119 21 5.5v13c0 1.381-1.119 2.5-2.5 2.5h-13C4.119 21 3 19.881 3 18.5v-13zM5.5 5c-.276 0-.5.224-.5.5v9.086l3-3 3 3 4-4 3 3V5.5c0-.276-.224-.5-.5-.5h-13zM19 15.414l-3-3-4 4-3-3-3 3V18.5c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-3.086zM9.75 7C8.784 7 8 7.784 8 8.75s.784 1.75 1.75 1.75 1.75-.784 1.75-1.75S10.716 7 9.75 7z"/></svg>
+            </button>
+            <button class="icon-btn" title="GIF">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#1d9bf0"><path d="M3 5.5C3 4.12 4.12 3 5.5 3h13C19.88 3 21 4.12 21 5.5v13c0 1.38-1.12 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-13zM5.5 5c-.28 0-.5.22-.5.5v13c0 .28.22.5.5.5h13c.28 0 .5-.22.5-.5v-13c0-.28-.22-.5-.5-.5h-13zM9 8.75c0-.41-.34-.75-.75-.75s-.75.34-.75.75v6.5c0 .41.34.75.75.75s.75-.34.75-.75V8.75zm3.25-.75c.41 0 .75.34.75.75v2.5H15c.41 0 .75.34.75.75s-.34.75-.75.75h-2v2.5c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-6.5c0-.41.34-.75.75-.75H12c.08 0 .17.01.25.01z"/></svg>
+            </button>
+            <button class="icon-btn" title="Poll">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#1d9bf0"><path d="M6 5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H6zm0 2h12v10H6V7zm2 2v2h3V9H8zm0 4v2h8v-2H8zm5-4v2h3V9h-3z"/></svg>
+            </button>
+            <button class="icon-btn" title="Emoji">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#1d9bf0"><path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75zM9 11.25c-.69 0-1.25-.56-1.25-1.25S8.31 8.75 9 8.75s1.25.56 1.25 1.25S9.69 11.25 9 11.25zm6 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm-7.26 3h8.52c-.46 2.17-2.37 3.75-4.26 3.75s-3.8-1.58-4.26-3.75z"/></svg>
+            </button>
+            <button class="icon-btn" title="Schedule">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#1d9bf0"><path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75zm.75 4.5v4.94l3.53 3.53-1.06 1.06-3.97-3.97V7.25h1.5z"/></svg>
+            </button>
+            <button class="icon-btn" title="Location">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#1d9bf0"><path d="M12 7c-1.93 0-3.5 1.57-3.5 3.5S10.07 14 12 14s3.5-1.57 3.5-3.5S13.93 7 12 7zm0 5c-.827 0-1.5-.673-1.5-1.5S11.173 9 12 9s1.5.673 1.5 1.5S12.827 12 12 12zm0-10C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7zm0 18.147C9.82 17.028 7 12.682 7 9c0-2.757 2.243-5 5-5s5 2.243 5 5c0 3.686-2.82 8.028-5 11.147z"/></svg>
+            </button>
+          </div>
+          <button class="post-small-btn" id="composePostBtn">Post</button>
+        </div>
+      </div>
+    </div>
+
+    <article class="post">
+      <div class="avatar nature">UG</div>
+      <div class="post-content">
+        <div class="post-header">
+          <span class="post-author">Upcoming Graduates</span>
+          <span class="verified">✓</span>
+          <span class="post-handle">@EngineersOfTomorrow</span>
+          <span class="post-dot">·</span>
+          <span class="post-time">19h</span>
+          <span class="post-more">···</span>
+        </div>
+        <p class="post-text">Ms Moila will be getting on that stage in a few months. Years of hardwork just for the engineer title. Shes indeed just a girl</p>
+        <div class="post-image">
+          <div class="img-placeholder">M</div>
+        </div>
+        <div class="post-actions">
+          <span class="action reply" onclick="handleReply(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"/></svg>
+            <span class="count">247</span>
+          </span>
+          <span class="action repost" onclick="handleRepost(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg>
+            <span class="count">1.2K</span>
+          </span>
+          <span class="action like" onclick="handleLike(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 5.99 8.526 5.54 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/></svg>
+            <span class="count">18.4K</span>
+          </span>
+          <span class="action views">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>
+            <span>2.1M</span>
+          </span>
+          <span class="action share" onclick="handleShare(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.12 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"/></svg>
+          </span>
+        </div>
+      </div>
+    </article>
+ 
+    <!-- Post 2 -->
+    <article class="post">
+      <div class="avatar" style="background:linear-gradient(135deg,#1d9bf0,#0a6bbf)">S</div>
+      <div class="post-content">
+        <div class="post-header">
+          <span class="post-author">Science Daily</span>
+          <span class="verified">✓</span>
+          <span class="post-handle">@ScienceDaily</span>
+          <span class="post-dot">·</span>
+          <span class="post-time">2h</span>
+          <span class="post-more">···</span>
+        </div>
+        <p class="post-text">Researchers have discovered a new species of deep-sea fish that produces its own light using a unique bioluminescent organ. This remarkable adaptation helps it attract prey in the pitch-dark ocean depths. </p>
+        <div class="post-actions">
+          <span class="action reply" onclick="handleReply(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"/></svg>
+            <span class="count">89</span>
+          </span>
+          <span class="action repost" onclick="handleRepost(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg>
+            <span class="count">412</span>
+          </span>
+          <span class="action like" onclick="handleLike(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 5.99 8.526 5.54 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/></svg>
+            <span class="count">3.2K</span>
+          </span>
+          <span class="action views">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>
+            <span>487K</span>
+          </span>
+          <span class="action share" onclick="handleShare(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.12 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"/></svg>
+          </span>
+        </div>
+      </div>
+    </article>
+ 
+    <!-- Post 3 -->
+    <article class="post">
+      <div class="avatar" style="background:linear-gradient(135deg,#f91880,#a00050)">T</div>
+      <div class="post-content">
+        <div class="post-header">
+          <span class="post-author">TechInsider</span>
+          <span class="post-handle">@TechInsider</span>
+          <span class="post-dot">·</span>
+          <span class="post-time">5h</span>
+          <span class="post-more">···</span>
+        </div>
+        <p class="post-text">The new AI models are getting scarily good at coding. Just watched one debug a complex race condition in under 30 seconds. Wild times we're living in. </p>
+        <div class="post-actions">
+          <span class="action reply" onclick="handleReply(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"/></svg>
+            <span class="count">532</span>
+          </span>
+          <span class="action repost" onclick="handleRepost(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg>
+            <span class="count">2.1K</span>
+          </span>
+          <span class="action like" onclick="handleLike(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 5.99 8.526 5.54 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/></svg>
+            <span class="count">9.8K</span>
+          </span>
+          <span class="action views">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>
+            <span>1.3M</span>
+          </span>
+          <span class="action share" onclick="handleShare(this)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42L12 2.59zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.12 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15h2z"/></svg>
+          </span>
+        </div>
+      </div>
+    </article>
+  </div>
+ 
+  <!-- FOLLOWING -->
+  <div id="tab-following" class="tab-content">
+    <!-- Compose (same) -->
+    <div class="compose">
+      <div class="avatar moila">M</div>
+      <div class="compose-input">
+        <input type="text" placeholder="What's happening?"/>
+        <div class="compose-actions">
+          <div class="compose-icons">
+            <button class="icon-btn">📷</button>
+          </div>
+          <button class="post-small-btn">Post</button>
+        </div>
+      </div>
+    </div>
+ 
+    <article class="post">
+      <div class="avatar nature">N</div>
+      <div class="post-content">
+        <div class="post-header">
+          <span class="post-author">Nature Unedited</span>
+          <span class="verified">✓</span>
+          <span class="post-handle">@NatureUnedited</span>
+          <span class="post-dot">·</span>
+          <span class="post-time">19h</span>
+          <span class="post-more">···</span>
+        </div>
+        <p class="post-text">Look at how these two ferrets turn a simple plastic tube into their favorite playground. They chase, hide, jump and surprise each other nonstop, exactly the kind of play they love </p>
+        <div class="post-image">
+          <div class="img-placeholder">🐾</div>
+        </div>
+        <div class="post-actions">
+          <span class="action reply" onclick="handleReply(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"/></svg><span class="count">247</span></span>
+          <span class="action repost" onclick="handleRepost(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg><span class="count">1.2K</span></span>
+          <span class="action like" onclick="handleLike(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 5.99 8.526 5.54 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/></svg><span class="count">18.4K</span></span>
+          <span class="action views"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg><span>2.1M</span></span>
+        </div>
+      </div>
+    </article>
+ 
+    <article class="post">
+      <div class="avatar" style="background:linear-gradient(135deg,#f91880,#a00050)">T</div>
+      <div class="post-content">
+        <div class="post-header">
+          <span class="post-author">TechInsider</span>
+          <span class="post-handle">@TechInsider</span>
+          <span class="post-dot">·</span>
+          <span class="post-time">5h</span>
+          <span class="post-more">···</span>
+        </div>
+        <p class="post-text">Just followed back everyone who engaged with my last thread. Community first! </p>
+        <div class="post-actions">
+          <span class="action reply" onclick="handleReply(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.005 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"/></svg><span class="count">44</span></span>
+          <span class="action repost" onclick="handleRepost(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"/></svg><span class="count">201</span></span>
+          <span class="action like" onclick="handleLike(this)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 5.99 8.526 5.54 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/></svg><span class="count">1.1K</span></span>
+          <span class="action views"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg><span>88K</span></span>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+ 
+<!-- ── RIGHT SIDEBAR ── -->
+<aside class="right-sidebar">
+  <div class="search-bar">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="#536471"><path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.814 5.262l4.776 4.777-1.414 1.414-4.777-4.776c-1.447 1.132-3.276 1.814-5.262 1.814-4.694 0-8.5-3.806-8.5-8.5z"/></svg>
+    Search
+  </div>
+ 
+  <!-- Premium widget -->
+  <div class="widget">
+    <div class="widget-title">
+      Subscribe to Premium
+      <span class="premium-badge">50% off</span>
+    </div>
+    <p>Get rid of ads, see your analytics, boost your replies and unlock 20+ features.</p>
+    <button class="subscribe-btn">Subscribe</button>
+  </div>
+ 
+  <!-- Today's News -->
+  <div class="widget">
+    <div class="widget-title">
+      Today's News
+      <span style="color:#536471; font-size:1rem; cursor:pointer;">✕</span>
+    </div>
+ 
+    <div class="news-item">
+      <div class="news-title">Iran destroys oil tanker attempting to pass through Strait of Hormuz without …</div>
+      <div class="news-meta">
+        <div class="news-avatars">
+          <div class="news-avatar"></div>
+          <div class="news-avatar"></div>
+        </div>
+        Trending now · News · 3,195 posts
+      </div>
+    </div>
+ 
+    <div class="news-item">
+      <div class="news-title">South African Musician Shebeshxt Appoints New Attorney and Has Case …</div>
+      <div class="news-meta">
+        <div class="news-avatars">
+          <div class="news-avatar"></div>
+          <div class="news-avatar"></div>
+        </div>
+        Trending now · News · 573 posts
+      </div>
+    </div>
+ 
+    <div class="news-item">
+      <div class="news-title">South Africa National Football Team Faces Panama in International Friendly at Moses…</div>
+      <div class="news-meta">
+        <div class="news-avatars">
+          <div class="news-avatar"></div>
+          <div class="news-avatar"></div>
+        </div>
+        Trending now · Sports · 4,210 posts
+      </div>
+    </div>
+  </div>
+ 
+  <!-- What's happening -->
+  <div class="widget">
+    <div class="widget-title">What's happening</div>
+    <div class="trending-item">
+      <div>
+        <div class="trending-category">Entertainment · Trending</div>
+        <div class="trending-topic">PODCAST&CHILL WITH THANDEKA</div>
+        <div class="trending-category" style="margin-top:2px;">1,204 posts</div>
+      </div>
+      <span style="color:#536471; cursor:pointer;">···</span>
+    </div>
+    <div class="trending-item">
+      <div>
+        <div class="trending-category">Technology · Trending</div>
+        <div class="trending-topic">#AITools</div>
+        <div class="trending-category" style="margin-top:2px;">42.1K posts</div>
+      </div>
+      <span style="color:#536471; cursor:pointer;">···</span>
+    </div>
+    <div class="trending-item">
+      <div>
+        <div class="trending-category">Sports · Trending</div>
+        <div class="trending-topic">Bafana Bafana</div>
+        <div class="trending-category" style="margin-top:2px;">8,530 posts</div>
+      </div>
+      <span style="color:#536471; cursor:pointer;">···</span>
+    </div>
+  </div>
+</aside>
+<script src="script.js"></script>
+</body>
+</html>

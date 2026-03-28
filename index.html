@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOG/SIGNIN</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Left side: logo -->
+  <div class="left">
+    <img src="icons/logot.svg" alt="Logo" class="logo">
+  </div>
+
+  <!-- Right side: sign up form -->
+  <div class="right">
+    <h1>Happening now</h1>
+    <h2>Join today</h2>
+
+    <!-- Sign up buttons -->
+    <button class="btn" id="googleBtn">
+      <img src="icons/google.svg" alt="Google Logo" class="icon">
+      Sign up with Google
+    </button>
+
+    <button class="btn" id="appleBtn">
+      <img src="icons/apple.svg" alt="Apple Logo" class="icon">
+      Sign up with Apple
+    </button>
+
+    <p>or</p>
+
+    <button class="btn btn-black" id="createBtn">Create account</button>
+
+    <p class="terms">
+      By signing up, you agree to the 
+      <a href="#">Terms of Service</a>, 
+      <a href="#">Privacy Policy</a>, and 
+      <a href="#">Cookie Use</a>.
+    </p>
+
+    <h2>Already have an account?</h2>
+    <button class="btn" id="signinBtn">Sign in</button>
+    <button class="btn" id="grokBtn">
+      <img src="icons/grok.svg" alt="Grok Logo" class="icon">
+      Get Grok
+    </button>
+  </div>
+<script>
+  // Navigate to the main feed
+  function goToFeed() {
+    window.location.href = 'twitter.html';
+  }
+
+  document.getElementById('signinBtn').addEventListener('click', goToFeed);
+  document.getElementById('createBtn').addEventListener('click', goToFeed);
+  document.getElementById('googleBtn').addEventListener('click', goToFeed);
+  document.getElementById('appleBtn').addEventListener('click', goToFeed);
+</script>
+</body>
+</html>
